@@ -94,55 +94,7 @@ class moduleApi
                                 }
                             }
                         ]
-                    });
-                  /*  $.each( data.entries, function( key, value ) 
-                    {   
-                        //Append html
-                        var html = "";
-                        if (value.rated == 0)
-                        {
-                            var rated =  "<div id='" + value.name +"' class='rateProduct rateit' data-rateit-value='" + value.average + "' data-productid='" + value.id + "'></div>";
-                        }
-                        else
-                        {
-                            var rated =  "<div id='" + value.name +"' class='rateProduct rateit' data-rateit-readonly='true' data-rateit-value='" + value.average + "' data-productid='" + value.id + "'></div>";
-                        }
-                        html = 
-                        '<div class="col-sm-6 text-center" style="padding-bottom:2em;"><div class="card mb-3"><div class="row no-gutters"><div class="col-md-5"><img src="' + value.img +'" class="card-img" alt="' + value.name + '" style="max-height: 281px;"></div>'
-                        + '<div class="col-md-7"><div class="card-body"><h5 class="card-title">'
-                        + value.name + " - USD " + value.price + "<hr> <span class='card-text'>Rate Average "
-                        + value.average +" <small title='This Product has been rated " + value.count + " time(s)'>("
-                        + value.count + ")</small></span><br>"
-                        + rated
-                        + '</h5><p class="card-text">'
-                        + value.description
-                        + '</p><div class="form-group row"><label for="quantity_' + value.id + '" class="col-sm-3 offset-sm-3 col-form-label" style="padding-right:0px;margin-right:0px;">Quantity</label>'
-                        + '<div class="col-sm-3" style="padding-left:0px;margin-left:0px;"><input type="number" class="form-control quantity" name="quantity_' + value.id + '" data-idproduct="' + value.id + '" value="1" required></div></div>'
-                        + '<a href="#" data-idproduct="' + value.id + '" class="btn btn-primary addToCart">'
-                        + 'Add to Cart <i class="fas fa-cart-plus" style="color:white;"></i></a></div></div></div></div></div>';
-                        
-                        $("#rowProducts").append(html);
-                    }); 
-                    $(".rateProduct").rateit({
-                        step: 1,
-                        min: 0,
-                        max: 5,
-                        resetable: false
-                    }).bind('rated', function() { 
-                        //Creates Rate record
-                        moduleRate.set_product_id($(this).data('productid'));
-                        moduleRate.set_valoration($(this).rateit('value'));
-                        moduleRate.create_rate();
-                        window.location.reload();
-                    });
-                    $(".addToCart").on("click", function()
-                    {
-                        var productId = $(this).data('idproduct');
-                        var quantity = $(".quantity[data-idproduct=" + productId + "]").val();
-                        moduleShopcart.set_product_id(productId);
-                        moduleShopcart.set_quantity(quantity);
-                        moduleShopcart.add_to_cart();
-                    });       */            
+                    });         
                 }
                 else if (data.code == 204){
                     //Muestra imágen de resultados no encontrados

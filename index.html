@@ -1,0 +1,72 @@
+<html>
+
+    <head>
+        <title>Tribal MnC Guatemala | Jomi Morillo</title>
+        <meta charset="utf-8">
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+        <link type="text/css" rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="libs/js/DataTables/datatables.min.css"/>
+
+        <!-- 5 Stars rating plugin -->
+        <link rel="stylesheet" href="libs/rateIt/scripts/rateit.css">
+    </head>
+    <body>
+        <!-- NAV BAR --> 
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #b198d2 !important;">
+            <a class="navbar-brand" href="#"> <img src="libs/img/logo.png" alt="" width="170" height="50"></a>
+            
+        </nav>
+        <!-- NAV BAR (END) --> 
+        <!-- CONTENT -->
+        <div class="container">
+            <div class="row">
+                <div class="col col-lg-12 white-box align-content-center" style="height: 400px;">
+                    <h3 class="text-center" style="margin-bottom: 1em;">Personas, Películas, Canciones, eBooks y TV Shows en un solo lugar!</h3>
+                    
+                    <div class="form-row" style="margin-bottom: 3em;">
+                        <div class="input-group col-sm-10 offset-sm-1 col-md-8 offsef-md-2 col-lg-6 offset-lg-3">
+                            <input type="text" class="form-control" id="busqueda" required placeholder="Ingrese su búsqueda...">
+                            <div class="input-group-append">
+                                <button class="btn" id="buscar" style="background-color: #946fcd;color: white;">Buscar</button>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-10 offset-sm-1" id="colItems" style="text-align: center;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- CONTENT (END) -->
+        <style>
+            /* Estilo para select de cantidad de registros en DataTable */
+            .dataTables_length{
+                float: left !important;
+            }
+        </style>
+    </body>
+    <script src="libs/js/jquery/jquery-2.2.0.min.js"></script>
+    <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="libs/rateIt/scripts/jquery.rateit.js"></script>
+    <script src="https://kit.fontawesome.com/d7d48d5603.js"></script>
+    <script type="text/javascript" src="libs/js/DataTables/datatables.min.js"></script>
+    <script src="libs/js/ajaxModules/moduleApi.js" ></script> 
+    <script>
+        $(document).on("ready", function(){
+            //Instancia Módulo JavaScript
+            var moduleAPI = new moduleApi();
+
+            $("#buscar").on("click", function(e){
+                e.preventDefault();
+                var busqueda = $("#busqueda").val();
+                
+                if ($.trim(busqueda)){
+                    moduleAPI.get_items(busqueda); 
+                }
+            });
+           
+        });
+    </script>
+</html>
